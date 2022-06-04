@@ -1,0 +1,203 @@
+.center {
+  text-align: center;
+}
+
+/* Inputs */
+.input-field {
+  width: 40%;
+  padding: 12px 15px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+.code-input,
+.restore-password-inputs {
+  margin: 4px 0;
+  padding: 12px 0;
+  text-align: center;
+  max-lines: 6;
+}
+
+.code-input::-webkit-outer-spin-button,
+.code-input::-webkit-inner-spin-button,
+.restore-password-inputs::-webkit-outer-spin-button,
+.restore-password-inputs::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* ------- */
+
+/* Headers */
+.header {
+  padding: 4px;
+  text-align: center;
+}
+
+.login-header {
+  color: #48d1cc;
+  border: 2px solid #20b2aa;
+}
+
+.register-header {
+  color: #00bfff;
+  border: 2px solid #1e90ff;
+}
+
+.profile-header,
+.restore-header,
+.verify-header {
+  color: #0074d9;
+  border: 2px solid #1e90ff;
+}
+
+.login-form-verify {
+  float: right;
+}
+/* ------- */
+
+/* Blocks */
+.forgot_password_block,
+.restore_password_block,
+.verify_block {
+  margin: auto;
+  width: 50%;
+  border: 5px solid #1e90ff;
+  padding: 10px;
+  display: block;
+}
+/* ------- */
+
+/* Messages */
+.validation,
+.success,
+.info {
+  width: 45%;
+  border: 1px solid;
+  margin: 0 auto;
+  padding: 10px 10px 10px 40px;
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.validation {
+  color: #d63301;
+  background-color: #ffccba;
+}
+
+.success {
+  color: #4f8a10;
+  background-color: #dff2bf;
+}
+
+.info {
+  color: #00529b;
+  background-color: #bde5f8;
+}
+/* ------- */
+
+/* Buttons*/
+.register-button,
+.confirm-button {
+  background-color: #00bfff;
+}
+
+.disabled-button {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.disabled-button:hover {
+  background-color: #bdbcbc;
+}
+
+.login-button {
+  background-color: #48d1cc;
+}
+
+.login-page-login-button {
+  margin-left: 180px;
+}
+
+.forgot-link {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.forgot-link:hover {
+  color: #0074d9;
+  transform: translateY(2px);
+  transition-duration: 0.35s;
+}
+
+.logout-button {
+  background-color: #0074d9;
+}
+
+.button {
+  appearance: none;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, -apple-system, system-ui, 'Segoe UI', Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button:hover {
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 0.5s;
+}
+
+.login-button:hover {
+  background-color: #20b2aa;
+  color: white;
+}
+
+.register-button:hover,
+.confirm-button:hover {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.button:active {
+  transform: translateY(2px);
+  transition-duration: 0.35s;
+}
+
+.button:hover {
+  box-shadow: rgba(39, 174, 96, 0.2) 0 6px 12px;
+}
+
+.yes_or_no {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* ------- */

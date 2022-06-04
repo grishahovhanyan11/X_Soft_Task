@@ -1,0 +1,29 @@
+{
+  "name": "xsofttask",
+  "version": "0.1.0",
+  "description": "X-SOFT test task with NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon --require dotenv/config app.js"
+  },
+  "keywords": [],
+  "author": "Grisha Hovhanyan",
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.3.5",
+    "nodemailer": "^6.7.3",
+    "passport": "^0.5.2",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2"
+  }
+}

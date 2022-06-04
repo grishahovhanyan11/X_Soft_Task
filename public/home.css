@@ -1,0 +1,50 @@
+.app-wrapper {
+  display: grid;
+
+  grid-template-areas:
+    'header'
+    'content';
+
+  grid-template-rows: 80px 1fr;
+  grid-template-rows: 80px 520px;
+  grid-gap: 6px;
+
+  background-color: silver;
+  padding: 5px;
+}
+
+.header {
+  grid-area: header;
+
+  background-color: rgba(77, 68, 68, 0.26);
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  padding: 14px 14px;
+  border: 2px solid white;
+}
+
+.content {
+  grid-area: content;
+
+  background-color: rgba(77, 68, 68, 0.26);
+  border: 2px solid white;
+  display: block;
+  text-align: center;
+  height: 150px;
+}
+
+.navigation {
+  text-decoration: none;
+  font-family: Comic Sans MS;
+  color: black;
+  font-size: 30px;
+}
+
+.navigation:hover {
+  color: white;
+
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 0.5s;
+}
