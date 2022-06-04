@@ -2,7 +2,7 @@ let url
 if (process.env.NODE_ENV !== 'production') {
   url = 'http://localhost:5000'
 } else {
-  url = 'heroku'
+  url = 'https://xsofttask.herokuapp.com/'
 }
 
 const yesButton = document.getElementById('send_code_btn')
