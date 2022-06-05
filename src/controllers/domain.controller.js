@@ -20,7 +20,7 @@ async function addNewDomain(req, res) {
       })
     }
 
-    const newDomain = await DomainModel.create({ name: domain })
+    await DomainModel.create({ name: domain })
 
     res.redirect('/profile')
 
