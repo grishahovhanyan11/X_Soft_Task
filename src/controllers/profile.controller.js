@@ -3,24 +3,34 @@ const DomainModel = require('../models/Domain.model')
 const sendRequests = require('../services/sendRequests')
 
 async function renderProfile(req, res) {
-  const user = req.user
+  try {
+    const user = req.user
 
-  if (user.isAdmin) {
-    const domains = await DomainModel.find().select('name _id')
+    if (user.isAdmin) {
+      const domains = await DomainModel.find().select('name _id')
 
-    return res.render('adminProfile', {
-      userEmail: user.email,
-      domains
-    })
-  }
+      return res.render('adminProfile', {
+        userEmail: user.email,
+        domains
+      })
+    }
 
-  if (user.isCron) {
-    const domainsCount = await DomainModel.countDocuments()
+    if (user.isCron) {
+      const domainsCount = await DomainModel.countDocuments()
 
-    return res.render('cronProfile', {
-      domainsCount,
-      userEmail: user.email
-    })
+      return res.render('cronProfile', {
+        domainsCount,
+        userEmail: user.email
+      })
+    }
+
+    res.send('<h1>404 NOT FOUND</h1>')
+
+  } catch (e) {
+    res.send(`
+    <h1>Server side error</h1>
+    <div>${e.message}</div>`)
+    console.log(e.message)
   }
 
 }

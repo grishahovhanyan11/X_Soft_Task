@@ -107,29 +107,36 @@ function renderVerify(req, res) {
 }
 
 async function sendCodeToMail(req, res) {
-  const { email } = req.body
-  console.log(email)
-  const userFromDb = await UserModel.findOne({ email })
+  try {
+    const { email } = req.body
+    console.log(email)
+    const userFromDb = await UserModel.findOne({ email })
 
-  if (!userFromDb) {
-    return res.status(400).json({
-      errMessage: 'No user with such email.',
+    if (!userFromDb) {
+      return res.status(400).json({
+        errMessage: 'No user with such email.',
+      })
+    }
+
+    // Send code
+    const code = randomCode()
+    await sendConfirmCodeToUserMail(email, code)
+    console.log(code, '<---- code')
+
+    // Hash code
+    const hashedCode = await bcrypt.hash(code, 12)
+    userFromDb.confirmCode = hashedCode
+    await userFromDb.save()
+
+    res.json({
+      message: 'Verify code was sended.',
     })
+  } catch (e) {
+    res.send(`
+    <h1>Server side error</h1>
+    <div>${e.message}</div>`)
+    console.log(e.message)
   }
-
-  // Send code
-  const code = randomCode()
-  await sendConfirmCodeToUserMail(email, code)
-  console.log(code, '<---- code')
-
-  // Hash code
-  const hashedCode = await bcrypt.hash(code, 12)
-  userFromDb.confirmCode = hashedCode
-  await userFromDb.save()
-
-  res.json({
-    message: 'Verify code was sended.',
-  })
 }
 
 async function verify(req, res) {

@@ -24,8 +24,7 @@
   text-decoration: none;
 }
 
-.admin-content,
-.cron-content {
+.data-block {
   background-color: rgba(77, 68, 68, 0.26);
   border: 2px solid black;
   margin: 5px;

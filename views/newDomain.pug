@@ -7,7 +7,7 @@ html
   body 
     div.app-wrapper
       div.header 
-        h1.header-left Add New Domain
+        h1.header-left New Domain
         div.header-right 
           div User Email: #{userEmail}
 
@@ -15,6 +15,20 @@ html
             button(type="submit") Log out 
 
 
-      div new domain
+      div.data-block 
+        form(action="/profile").to-profile-form
+          button(type="submit") Profile
+
+
+        form(action="/domain" method="post")
+          if validationInfo
+            b(style="color: red")= validationInfo 
+          else  
+            b New Domain URL
+          
+          br
+          input(name="domain" placeholder="https://www.xsoft.am/").center
+          br
+          button(type="submit").new-domain-btn Add New Domain 
 
 
