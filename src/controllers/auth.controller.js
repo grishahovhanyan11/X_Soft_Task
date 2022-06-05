@@ -35,8 +35,8 @@ async function register(req, res) {
     console.log(code, '<---- code')
 
     // Hash password and code
-    const hashedPassword = await bcrypt.hash(password, 12)
-    const hashedCode = await bcrypt.hash(code, 12)
+    const hashedPassword = await bcrypt.hash(password, 10)
+    const hashedCode = await bcrypt.hash(code, 10)
     // Put user data in DB
     await UserModel.create({
       email,
@@ -188,7 +188,7 @@ async function login(req, res) {
       return res.render('login', {
         email,
         invalidValues: true,
-        validationMessage: 'Input password.',
+        validationMessage: 'Enter password.',
       })
     }
 

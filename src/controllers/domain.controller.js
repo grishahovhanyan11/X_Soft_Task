@@ -35,12 +35,13 @@ async function addNewDomain(req, res) {
 async function renderDetails(req, res) {
   const { domainId } = req.params
 
-  const domain = await DomainModel.findById(domainId).populate('requestsList.userId')
+  const domain = await DomainModel.findById(domainId)
+    .populate('requestsList.userId')
 
   // Put all test data 
   const domainTests = []
 
-  for (let eachTest of domain.requestsList) {
+  for (let eachTest of domain.requestsList) { // [ test === request ]
     const test = {
       userEmail: eachTest.userId.email,
       status: eachTest.status,
