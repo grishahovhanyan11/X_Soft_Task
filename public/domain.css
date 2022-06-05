@@ -45,3 +45,13 @@
 .new-domain-btn {
   margin-top: 8px;
 }
+
+.test-info-header {
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.test-data {
+  border: 2px dotted black;
+  margin: 10px;
+}

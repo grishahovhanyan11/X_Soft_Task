@@ -59,3 +59,22 @@ input[type='number'] {
   border: 2px dotted black;
   margin: 10px;
 }
+
+/* TABLE */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 20px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* ======= */

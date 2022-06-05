@@ -19,13 +19,22 @@ html
         form(action="/domain")
           button(type="submit") Add New Domain 
 
+        hr
+
         if domains 
-          each domain in domains 
-            div.domain-data
-              div= domain.name
-              div= domain._id
+          table#domain-table 
+            tr
+              th(style= "color: red") Name
+              th(style= "color: red") Details
+            each domain in domains 
+              tr
+                td= domain.name
+                td 
+                  a(href="/domain/" + domain._id) Details
 
         else 
           h2 No domains in DB!
+
+
 
 

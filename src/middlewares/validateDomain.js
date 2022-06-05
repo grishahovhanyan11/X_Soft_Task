@@ -12,8 +12,25 @@ function errorHandler(req, res, next) {
   const validErrors = validationResult(req).array()
 
   if (validErrors.length !== 0) {
+    if (req.url === '/') {
+      // New domain page
+      return res.render('newDomain', {
+        userEmail: req.user.email,
+        validationInfo: validErrors[0].msg
+      })
+    } else {
+      // Edit domain page
+      return res.render('domainDetails', {
+        userEmail: req.user.email,
+        validationInfo: validErrors[0].msg,
+        domain: {
+          id: req.params.domainId
+        }
+      })
+    }
+
     // RED INPUT 
-    return res.render('newDomain', {
+    return res.render(pugName, {
       userEmail: req.user.email,
       validationInfo: validErrors[0].msg
     })

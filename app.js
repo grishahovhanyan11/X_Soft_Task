@@ -6,6 +6,10 @@ const app = express()
 // Import routes //
 const router = require('./src/routers/index')
 
+// method override [for PUT and DELETE request]
+const methodOverride = require('method-override')
+app.use(methodOverride("_method"))
+
 // Template engineS //
 app.set('view engine', 'pug')
 app.use(express.static('public'))
