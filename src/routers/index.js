@@ -3,7 +3,7 @@ const router = require('express').Router()
 // Import Routes
 const authRouter = require('./auth.router')
 const profileRouter = require('./profile.router')
-const cronRouter = require('./cron.router')
+const domainRouter = require('./domain.router')
 
 // Middlewares
 const check = require('../middlewares/checkAuthentication')
@@ -15,6 +15,6 @@ router.get('/', (req, res) => {
 
 router.use('/auth', check.notAuthenticated, authRouter)
 router.use('/profile', check.authenticated, profileRouter)
-router.use('/cron', /*check.authenticated,*/ cronRouter)
+router.use('/domain', check.authenticated, domainRouter)
 
 module.exports = router

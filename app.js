@@ -16,8 +16,15 @@ app.use(cors({ origin: '*' }))
 
 // Express-session // 
 const session = require('express-session')
+const MongoDBStore = require('connect-mongodb-session')(session)
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
+  store: new MongoDBStore({
+    uri: `mongodb+srv://admin:${process.env.DB_PASSWORD}@xsofttask.dz7rt.mongodb.net/?retryWrites=true&w=majority`,
+    databaseName: 'XSoftTask',
+    collection: 'sessions'
+  }),
   resave: true,
   saveUninitialized: true
 }))
@@ -34,13 +41,13 @@ app.use(passport.session())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// // Use Routes //
+// Use Routes //
 app.use('/', router)
 
 // Connections //
 async function connections() {
   try {
-    await mongoose.connect(`mongodb+srv://admin:${process.env.DB_PASSWORD}@xsofttask.dz7rt.mongodb.net/?retryWrites=true&w=majority`)
+    await mongoose.connect(`mongodb+srv://admin:${process.env.DB_PASSWORD}@xsofttask.dz7rt.mongodb.net/XSoftTask?retryWrites=true&w=majority`)
     console.log('Connection to DB success.')
 
     const port = process.env.PORT || 5005

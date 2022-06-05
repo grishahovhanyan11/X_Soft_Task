@@ -9,30 +9,31 @@ html
       div.header 
         h1.header-left Cron Profile
         div.header-right 
+          div User Email: #{userEmail}
+
           form(action="/profile/logout")
             button(type="submit") Log out 
-
 
       div.cron-content 
         b Enter count of domains in which you needed to do requests
 
         if domainsCount !== 0
-          div From 0 to #{domainsCount}
-
+          div From 1 to #{domainsCount}
+        else
+          div No domains in DB!
         
-
-        form(action="/cron" method="post")
-          input(name="count" placeholder="Domains count" type="number").center
+        form(action="/profile" method="post")#request-form
+          input(name="count" placeholder="Domains count" type="number" value="1").center
           br
-          button(type="submit").send-btn  Send 
+          button(type="submit").send-btn Send 
 
-
-        if requestsData
+        if requestsData 
+      
           each data in requestsData
             div.request-data
-              div Request url -> #{data.url}
-              div Request status -> #{data.status}
-              div Request status text -> #{data.statusText}
-              div Request Date -> #{data.requestDate}
+              div Request Url: #{data.url}
+              div Request Status: #{data.status}
+              div Request Status Text: #{data.statusText}
+              div Request Date: #{data.requestDate}
         
 
