@@ -6,9 +6,6 @@ const authRouter = require('express').Router()
 const authController = require('../controllers/auth.controller')
 
 // Middlewares //
-// Check Authentication 
-const check = require('../middlewares/checkAuthentication')
-
 // For validation
 const {
   validateEmail,

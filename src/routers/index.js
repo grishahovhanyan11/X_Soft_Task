@@ -17,4 +17,5 @@ router.use('/auth', check.notAuthenticated, authRouter)
 router.use('/profile', check.authenticated, profileRouter)
 router.use('/domain', check.authenticated, domainRouter)
 
+
 module.exports = router
