@@ -52,6 +52,14 @@ async function renderDetails(req, res) {
     domainTests.push(test)
   }
 
+  domainTests.sort((x, y) => {
+    if (x.userEmail > y.userEmail) {
+      return 1
+    }
+
+    return -1
+  })
+
   res.render('domainDetails', {
     userEmail: req.user.email,
     domain: {
