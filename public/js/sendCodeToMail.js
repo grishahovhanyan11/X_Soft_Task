@@ -15,7 +15,7 @@ yesButton.addEventListener('click', async () => {
     email = emailFromHtml.value
     window.localStorage.setItem('email', emailFromHtml.value)
   }
-  debugger
+
   const response = await fetch(`${url}/auth/sendCode`, {
     method: 'POST',
     headers: {
@@ -26,7 +26,6 @@ yesButton.addEventListener('click', async () => {
     })
   })
 
-  debugger
   if (response.status !== 200) {
     alert('No user with such email.')
   }

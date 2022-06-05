@@ -15,7 +15,7 @@ html
     if success
       div.success= successInfoMessage  
       
-    .center
+    div.center
       form(action="/auth/login", method="post") 
         input(name="email" placeholder="Email" type="email" value= email)#email-input.input-field
         br

@@ -1,0 +1,55 @@
+.app-wrapper {
+  margin: 5px;
+}
+
+.header {
+  background-color: rgba(77, 68, 68, 0.26);
+  color: rgba(245, 222, 179, 0.788);
+
+  padding: 14px 14px;
+  height: 80px;
+  border: 2px solid black;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+}
+
+.logout-button {
+  text-decoration: none;
+}
+
+.cron-content {
+  background-color: rgba(77, 68, 68, 0.26);
+  border: 2px solid black;
+  margin: 5px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.send-btn {
+  margin-top: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Remove Input Arrows*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+/* ======= */

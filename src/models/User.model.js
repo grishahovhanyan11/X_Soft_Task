@@ -5,7 +5,9 @@ const UserSchema = new Schema({
   email: { type: String },
   password: { type: String },
   isEmailVerified: { type: Boolean, default: false },
-  confirmCode: { type: String }
+  confirmCode: { type: String },
+  isAdmin: { type: Boolean, default: false },
+  isCron: { type: Boolean, default: true }
 }, { collection: 'users', strict: false })
 
 module.exports = model('User', UserSchema)

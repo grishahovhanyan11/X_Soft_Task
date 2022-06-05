@@ -19,8 +19,6 @@ const {
 
 // ------- //
 
-authRouter.use(check.notAuthenticated)
-
 authRouter // Register
   .get('/register',
     authController.renderRegister)

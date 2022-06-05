@@ -47,7 +47,9 @@ async function register(req, res) {
 
     res.redirect('/auth/verify')
   } catch (e) {
-    res.status(500).send('Server side error!')
+    res.send(`
+    <h1>Server side error</h1>
+    <div>${e.message}</div>`)
     console.log(e.message)
   }
 }
@@ -89,13 +91,11 @@ async function restorePassword(req, res) {
     userFromDb.isEmailVerified = true
     await userFromDb.save()
 
-    // res.render('login', {
-    //   success: true,
-    //   successInfoMessage: 'Your password was successfully changed.',
-    // })
     res.redirect('/auth/login')
   } catch (e) {
-    res.status(500).send('Server side error!')
+    res.send(`
+    <h1>Server side error</h1>
+    <div>${e.message}</div>`)
     console.log(e.message)
   }
 }
@@ -159,7 +159,9 @@ async function verify(req, res) {
     // })
     res.redirect('/auth/login')
   } catch (e) {
-    res.status(500).send('Server side error!')
+    res.send(`
+    <h1>Server side error</h1>
+    <div>${e.message}</div>`)
     console.log(e.message)
   }
 }
@@ -193,7 +195,7 @@ async function login(req, res) {
       })
     }
 
-    // If you already login with google which is used this email.
+    // If usre already login with google which is used this email.
     if (!userFromDb.password) {
       return res.render('login', {
         email,
@@ -214,7 +216,9 @@ async function login(req, res) {
       })
     }
   } catch (e) {
-    res.status(500).send('Server side error!')
+    res.send(`
+    <h1>Server side error</h1>
+    <div>${e.message}</div>`)
     console.log(e.message)
   }
 
